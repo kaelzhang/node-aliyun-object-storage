@@ -11,7 +11,7 @@
 
 # aliyun-object-storage
 
-<!-- description -->
+An easy-to-use stream-enabled client for Aliyun OSS (Object Storage Service).
 
 ## Install
 
@@ -22,8 +22,50 @@ $ npm install aliyun-object-storage --save
 ## Usage
 
 ```js
-var aliyun_object_storage = require('aliyun-object-storage');
+var oss = require('aliyun-object-storage')(bucket_name, options);
 ```
+
+- **bucket_name** `String=` aliyun oss bucket name
+- **options**
+  - **secret** `String` aliyun access key secret
+  - **id** `String` aliyun access key id
+
+`oss` is an duplex stream (both readable and writable stream), so that you could write your image uploading server as:
+
+```js
+http.createServer(function(req, res){
+  req.pipe(oss).pipe(res);
+}).listen(8888);
+```
+
+#### Upload an object
+
+```js
+fs.createReadStream('/path/to/a.png').pipe(oss);
+```
+
+#### Download an object
+
+```js
+oss(file).pipe(fs.createWriteStream('/path/to/a.png'));
+```
+
+#### oss.upload(filename, callback);
+
+```js
+oss.upload('/path/to/a.png', function (err, response, filename){
+  
+});
+```
+
+#### oss.download(filename, callback);
+
+#### <strike>oss.create(bucket_name, callback)<strike>
+
+No, creating bucket using api is really silly, because the max number of buckets is limited. 
+
+Go login into your Aliyun dashboard, and create it your own.
+
 
 ## License
 

@@ -1,7 +1,7 @@
 {
   "name": "aliyun-object-storage",
   "version": "1.0.0",
-  "description": "aliyun-object-storage",
+  "description": "An easy-to-use stream-enabled client for Aliyun OSS (Object Storage Service)",
   "main": "index.js",
   "scripts": {
     "test": "mocha --reporter spec ./test/*.js"
@@ -11,7 +11,11 @@
     "url": "git://github.com/kaelzhang/node-aliyun-object-storage.git"
   },
   "keywords": [
-    "aliyun-object-storage"
+    "aliyun",
+    "object-storage",
+    "oss",
+    "client",
+    "sdk"
   ],
   "engines": {
     "node": ">=0.10.0"
