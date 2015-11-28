@@ -1,0 +1,28 @@
+{
+  "name": "aliyun-object-storage",
+  "version": "1.0.0",
+  "description": "aliyun-object-storage",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec ./test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kaelzhang/node-aliyun-object-storage.git"
+  },
+  "keywords": [
+    "aliyun-object-storage"
+  ],
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "author": "kaelzhang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kaelzhang/node-aliyun-object-storage/issues"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "chai": "*"
+  }
+}
