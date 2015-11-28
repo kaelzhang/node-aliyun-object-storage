@@ -60,7 +60,7 @@ oss.upload('/path/to/a.png', function (err, response, filename){
 
 #### oss.download(filename, callback);
 
-#### <strike>oss.create(bucket_name, callback)<strike>
+#### <strike>oss.create(bucket_name, callback)</strike>
 
 No, creating bucket using api is really silly, because the max number of buckets is limited. 
 
